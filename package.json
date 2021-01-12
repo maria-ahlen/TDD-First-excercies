@@ -1,7 +1,7 @@
 {
   "name": "tdd-interest",
   "version": "1.0.0",
-  "description": "",
+  "description": "calculate interest",
   "main": "script.js",
   "scripts": {
     "test": "jest"
