@@ -1,5 +1,4 @@
 require('jest');
-
 const { capitalize } = require('../src/capitalize.js');
 
 
@@ -10,6 +9,7 @@ it('should return a string with first letter capitalized and the rest small', ()
 	let actual = capitalize(input);
 	expect(actual).toBe(expected);
 })
+
 
 it('should return undefined if the string contains non-letter characters', () => {
 	const input = 'C3-P0';
