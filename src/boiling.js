@@ -1,12 +1,16 @@
-function boiling(number) {
+function isWaterBoiling(degreesCelcius) {
 
-    if( typeof number !== 'number' ) {
+    if( typeof degreesCelcius !== 'number' ) {
         throw new Error('The input is not a number');
-    } else if (number < 100) {
-        throw new Error('The temperature is not high enough');
-    } 
-
-    return number;
+    } else if ( degreesCelcius === undefined ) {
+        throw new Error('You are missing the temperature')
+    }
+    
+    if (degreesCelcius === 100) {
+        return true
+    } else {
+        return false;
+    }
 }
 
-module.exports = { boiling };
+module.exports = { isWaterBoiling };

@@ -1,32 +1,41 @@
 require('jest');
-const { boiling } = require('../src/boiling.js');
+const { isWaterBoiling } = require('../src/boiling.js');
 
 it('throw an error on illegal input', () => {
-    const input = 'fifty';
-    
-    const danger = () => { 
-        boiling(input); 
-    }
-
+    const input = '55';
+    const danger = () => { isWaterBoiling(input); }
     expect(danger).toThrow();
 })
 
 
-it('throw an error if input is to low', () => {
+it('throw an error on empty input', () => {
+    const danger = () => { isWaterBoiling(); }
+    expect(danger).toThrow();
+})
+
+
+it('return false if input is to low', () => {
     const input = 30;
+    const expected = false;
     
-    const danger = () => { 
-        boiling(input); 
-    }
-
-    expect(danger).toThrow();
+    let actual = isWaterBoiling(input);
+    expect(actual).toBe(expected);
 })
 
 
-it('Return true if water boiling at the correct temperature', () => {
-    const input = 100;
-    const expected = 100;
+it('return false if input is to high', () => {
+    const input = 105;
+    const expected = false;
+    
+    let actual = isWaterBoiling(input);
+    expect(actual).toBe(expected);
+})
 
-    let actual = boiling(input);
+
+it('Return true if water is boiling at the correct temperature', () => {
+    const input = 100;
+    const expected = true;
+
+    let actual = isWaterBoiling(input);
     expect(actual).toBe(expected);
 })
