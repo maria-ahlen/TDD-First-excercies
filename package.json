@@ -4,7 +4,7 @@
   "description": "calculate interest",
   "main": "script.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch"
   },
   "author": "Maria Åhlén",
   "license": "ISC",

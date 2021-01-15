@@ -12,11 +12,7 @@ it('calculate the product of two numbers', () => {
 
 it('throw an Error if only one parameter', () => {
     let a = 132;
-    
-    const danger = () => {
-        multiply(a);
-    }
-
+    const danger = () => { multiply(a); }
     expect(danger).toThrow();
 })
 
